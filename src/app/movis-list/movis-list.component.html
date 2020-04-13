@@ -1,0 +1,32 @@
+<div class="container mt-4">
+        <div class="row">
+            <div class="col"> <h1>MOVIES</h1> </div>
+            <div class="col">
+                <button class="btn btn-success float-right" (click)="onNewMovie()"> Add Naw Movie</button>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2"> 
+            <div class="col mb-4" *ngFor='let movi of movis ; let i = index'>
+                <div class="row no-gutters">
+                    <div class="col-md-6">
+                        <img [src]="movi.photo" class="card-img" *ngIf="movi.photo">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                        <h5 class="card-title">{{ movi.name }}</h5>
+                        <p class="card-text"> {{ movi.body }} </p>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-success" (click)="onViewMovie(i)">Detailed</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-danger float-right" (click)="onDeleteMovi(movi)">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+
